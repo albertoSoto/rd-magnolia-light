@@ -1,2 +1,2 @@
 # rd-magnolia-light
-rd-magnolia-community-2017 magnolia magnolia-component
+Magnolia light development module for contest "Retos Digitales 2017" by Magnolia Community
