@@ -1,0 +1,19 @@
+{
+  "name": "backoffice-magnolia",
+  "version": "1.0.0",
+  "description": "Data components for magnolia integrating highcharts, datatables and fullcalendar",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/albertoSoto/rd-magnolia-light.git"
+  },
+  "keywords": [
+    "magnolia-light-module",
+    "magnolia-component"
+  ],
+  "author": "Alberto Soto Fernandez",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/albertoSoto/rd-magnolia-light/issues"
+  },
+  "homepage": "https://github.com/albertoSoto/rd-magnolia-light#readme"
+}
