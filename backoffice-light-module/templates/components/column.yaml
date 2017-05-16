@@ -1,0 +1,23 @@
+templateScript: /backoffice-light-module/templates/components/column.ftl
+renderType: freemarker
+visible: true
+title: Column
+description: Just a column
+dialog: backoffice-light-module:components/column
+parameters:
+  bgcontext: bg-success-uncomment
+areas:
+  parameters:
+    dummy: dummy-example
+  columns:
+    availableComponents:
+      html:
+        id: mtk:components/textImage
+      column:
+        id: backoffice-light-module:components/column
+      datatable-btk:
+        id: backoffice-light-module:components/datatable-btk
+      highchart-btk:
+        id: backoffice-light-module:components/highchart-btk
+      fullcalendar-btk:
+        id: backoffice-light-module:components/fullcalendar-btk

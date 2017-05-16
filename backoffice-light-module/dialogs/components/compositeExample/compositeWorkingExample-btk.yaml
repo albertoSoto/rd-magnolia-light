@@ -1,0 +1,70 @@
+# Automatically generated dialog with few most often used fileds (text, right, link, DAM image, multivalue, link to app, select). Feel free to modify them for your specific component.
+
+form:
+  label: highchart-btk
+  tabs:
+    - name: tabMain
+      label: Main
+      fields:
+
+        - name: title
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Title
+
+        - name: subtitle
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Subtitle
+
+        - name: labelAxisX
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: X Axis label
+
+        - name: labelAxisY
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Y Axis label
+
+        - name: graphData
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          label: Events
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          i18n: false
+          field:
+            name: compositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            i18n: false
+            fields:
+              - name: serie
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Series Name
+                i18n: false
+
+        - name: flights
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          label: Flights
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+          field:
+            name: flight
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+            fields:
+              - name: from
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: From
+              - name: to
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: To
+              - name: seats
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+                label: seats
+                field:
+                  name: seat
+                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  label: seat
+
+actions:
+  commit:
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

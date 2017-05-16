@@ -1,0 +1,143 @@
+# Automatically generated dialog with few most often used fileds (text, right, link, DAM image, multivalue, link to app, select). Feel free to modify them for your specific component.
+
+form:
+  label: datatable-btk
+  tabs:
+    - name: tabMain
+      label: Main
+      fields:
+
+        - name: title
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Title
+
+        - name: desc
+          class: info.magnolia.ui.form.field.definition.RichTextFieldDefinition
+          label: Description
+
+        - name: enableFooter
+          class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+          buttonLabel: Enables footer legend using header pattern
+          label: Enable Footer
+
+    - name: tabCustom
+      label: Customization
+      fields:
+        - name: categories
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          label: Select category
+          field:
+            name: linkField
+            class: info.magnolia.ui.form.field.definition.LinkFieldDefinition
+            targetWorkspace: category
+            appName: categories
+            identifierToPathConverter:
+              class: info.magnolia.ui.form.field.converter.BaseIdentifierToPathConverter
+
+        - name: labels
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          label: Header replacement
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          field:
+            name: compositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            fields:
+              - name: key
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Column Key
+              - name: label
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Label
+
+    - name: tabFilter
+      label: Filtering
+      fields:
+        - name: enableFiltering
+          class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+          buttonLabel: Enables sorting columns by custom order
+          label: Enable Filtering
+        - name: catLabel2
+          class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+          value: Filter your table data setting each key field from JCR or your json response from the server
+          label: Filtering
+        - name: order
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          label: Column order
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          field:
+            name: compositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            fields:
+              - name: columnKey
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Column Key
+
+    - name: tabData
+      label: Data
+      fields:
+        - name: enableAjax
+          class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+          buttonLabel: Enables custom data and additional actions
+          label: Enable Ajax
+
+        - name: catLabel3
+          class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+          value: Use any data provider via ajax with json fields according to https://datatables.net/examples/ajax/objects.html
+          label: Loading external data
+
+        - name: url
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: url
+          defaultValue: /.resources/backoffice-light-module/webresources/exampleData/datatable-btk-data-example.json
+
+        - name: enableCtx
+          class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+          buttonLabel: Check this if your url is inside magnolia (loads context as prefix)
+          label: Context
+
+        - name: catLabel4
+          class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+          value: Set your custom actions for each row, behaviours and information sent.
+          label: Actions
+
+        - name: idKey
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: ID field
+
+        - name: actions
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          label: Row actions
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          field:
+            name: compositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            fields:
+              - name: label
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Label
+              - name: url
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Url
+              - name: method
+                class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+                label: Method
+                options:
+                  - name: post
+                    value: post
+                    selected: true
+                    label: Send POST
+                  - name: ajaxHtml
+                    value: ajaxHtml
+                    label: Async POST, popup HTML
+                  - name: redraw
+                    value: redraw
+                    label: Async POST, reload
+
+actions:
+  commit:
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

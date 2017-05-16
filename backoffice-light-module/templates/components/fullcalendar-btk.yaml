@@ -1,0 +1,4 @@
+title: fullcalendar-btk
+renderType: freemarker
+templateScript: /backoffice-light-module/templates/components/fullcalendar-btk.ftl
+dialog: backoffice-light-module:components/fullcalendar-btk

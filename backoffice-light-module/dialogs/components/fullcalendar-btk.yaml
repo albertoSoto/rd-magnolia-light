@@ -1,0 +1,111 @@
+# Automatically generated dialog with few most often used fileds (text, right, link, DAM image, multivalue, link to app, select). Feel free to modify them for your specific component.
+
+form:
+  label: fullcalendar-btk
+  tabs:
+    - name: tabMain
+      label: Main
+      fields:
+        - name: title
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Title
+        - name: calendarOptions
+          class: info.magnolia.ui.form.field.definition.OptionGroupFieldDefinition
+          multiselect: true
+          type: String
+          label: Calendar options
+          options:
+            - name: enableMonthNavigation
+              label: Navigation enabled
+              selected: true
+              value: navigation
+            - name: enableWeekView
+              label: Enable Day View
+              selected: false
+              value: day
+            - name: enableWeekView
+              label: Enable Week View
+              selected: false
+              value: week
+            - name: enableMonthView
+              label: Enable Month View
+              selected: true
+              value: month
+
+    - name: tabEvents
+      label: Events
+      fields:
+        - name: events
+          class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+          value: Set all the dates you want to show in the calendar. Click on >< to set this screen bigger.
+          label: Events
+        - name: eventsData
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          label: Calendar Events
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          field:
+            name: compositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            fields:
+              - name: name
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Event Name
+              - name: start
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                label: Start date
+              - name: end
+                class: info.magnolia.ui.form.field.definition.DateFieldDefinition
+                label: End date (optional, if different)
+              - name: time
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Start time (optional, if day event, hh24:mm)
+
+    - name: tabGoogle
+      label: Google Cal
+      fields:
+        - name: enableGoogle
+          class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+          buttonLabel: Select to enable this actions, avoid custom events and load an additional js
+          label: Enable Google Calendar
+
+        - name: googleApiKey
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Google API Key
+
+        - name: googleCalendarID
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Calendar ID
+
+        - name: googleItemsClass
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: CSS class
+          default: gcal-event
+
+    - name: tabAjax
+      label: Custom data
+      fields:
+        - name: enableAjax
+          class: info.magnolia.ui.form.field.definition.CheckboxFieldDefinition
+          buttonLabel: Select to enable this actions and avoid custom events
+          label: Enable Ajax
+
+        - name: ajaxCollections
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          label: Calendar Events
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.MultiValueSubChildrenNodePropertiesTransformer
+          field:
+            name: compositeField
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.NoOpCompositeTransformer
+            fields:
+              - name: url
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: URI name
+                maxLength: 300
+
+actions:
+  commit:
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

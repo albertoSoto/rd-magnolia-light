@@ -1,0 +1,4 @@
+title: datatable-btk
+renderType: freemarker
+templateScript: /backoffice-light-module/templates/components/datatable-btk.ftl
+dialog: backoffice-light-module:components/datatable-btk

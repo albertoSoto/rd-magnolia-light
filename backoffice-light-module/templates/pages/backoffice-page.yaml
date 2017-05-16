@@ -1,0 +1,20 @@
+title: backoffice-page
+templateScript: /backoffice-light-module/templates/pages/backoffice-page.ftl
+renderType: freemarker
+dialog: backoffice-light-module:pages/backoffice-page
+visible: true
+areas:
+  htmlheader:
+    type: noComponent
+    renderType: freemarker
+    templateScript: /backoffice-light-module/templates/macro/htmlheader.ftl
+  main:
+    availableComponents:
+      gridComponent:
+        id: backoffice-light-module:components/grid
+      datatable-btk:
+        id: backoffice-light-module:components/datatable-btk
+      highchart-btk:
+        id: backoffice-light-module:components/highchart-btk
+      fullcalendar-btk:
+        id: backoffice-light-module:components/fullcalendar-btk

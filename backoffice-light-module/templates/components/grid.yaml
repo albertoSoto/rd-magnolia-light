@@ -1,0 +1,11 @@
+templateScript: /backoffice-light-module/templates/components/grid.ftl
+renderType: freemarker
+visible: true
+title: Grid
+description: This is a grid component. A parent container for for columns.
+dialog: backoffice-light-module:components/grid
+areas:
+  columns:
+    availableComponents:
+      column:
+        id: backoffice-light-module:components/column

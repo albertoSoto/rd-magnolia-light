@@ -1,0 +1,14 @@
+form:
+  tabs:
+    - name: tabMain
+      label: Grid
+      fields:
+        - name: usage
+          class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
+          label: Usage
+          value: This is a grid component which acts as a parent container for column components.
+actions:
+  commit:
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition

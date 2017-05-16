@@ -1,0 +1,27 @@
+{
+  "name": "backoffice-light-module",
+  "authors": [
+    "Alberto Soto Fernández <alberto.soto@gmail.com> "
+  ],
+  "description": "Backoffice components for data integration in magnolia",
+  "main": "",
+  "keywords": [
+    "rd-magnolia-community-2017"
+  ],
+  "license": "MIT",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "bower_components/",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "jquery": "^3.2.1",
+    "datatables.net": "^1.10.15",
+    "bootstrap": "^3.3.7",
+    "highcharts": "^5.0.11"
+  }
+}

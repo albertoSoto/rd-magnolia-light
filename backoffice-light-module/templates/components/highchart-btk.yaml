@@ -1,0 +1,4 @@
+title: highchart-btk
+renderType: freemarker
+templateScript: /backoffice-light-module/templates/components/highchart-btk.ftl
+dialog: backoffice-light-module:components/highchart-btk

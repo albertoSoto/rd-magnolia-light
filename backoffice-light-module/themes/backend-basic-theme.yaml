@@ -1,0 +1,107 @@
+cssFiles:
+  bootstrap:
+    addFingerPrint: true
+    link: /.resources/travel-demo-theme/libs/twitterbootstrap/css/bootstrap.min.css
+    media: all
+  roboto-condensed:
+    addFingerPrint: true
+    link: https://fonts.googleapis.com/css?family=Roboto+Condensed:400,300,700
+    media: all
+  slick:
+    addFingerPrint: true
+    link: /.resources/travel-demo-theme/libs/slick-carousel/css/slick.css
+    media: all
+  slick-theme:
+    addFingerPrint: true
+    link: /.resources/travel-demo-theme/libs/slick-carousel/css/slick-theme.css
+    media: all
+  full-calendar:
+    addFingerPrint: true
+    link: /.resources/backoffice-light-module/bower_components/fullcalendar/dist/fullcalendar.min.css
+    media: all
+  travels-magnolia:
+    addFingerPrint: true
+    link: /.resources/travel-demo-theme/css/travels-magnolia.css
+    media: all
+jsFiles:
+  respimage:
+    addFingerPrint: true
+    link: /.resources/travel-demo-theme/libs/lazysizes/respimage.min.js
+  lazysizes:
+    addFingerPrint: true
+    link: /.resources/travel-demo-theme/libs/lazysizes/lazysizes.min.js
+  modernizr:
+    addFingerPrint: true
+    link: /.resources/travel-demo-theme/js/modernizr-2.6.2.min.js
+  jquery:
+    addFingerPrint: true
+    link: /.resources/travel-demo-theme/js/jquery-1.10.2.min.js
+  jquery.object-fit-cover-simple:
+    addFingerPrint: true
+    link: /.resources/travel-demo-theme/js/jquery.object-fit-cover-simple.js
+  slick:
+    addFingerPrint: true
+    link: /.resources/travel-demo-theme/libs/slick-carousel/js/slick.min.js
+  bootstrap:
+    addFingerPrint: true
+    link: /.resources/backoffice-light-module/bower_components/bootstrap/dist/js/bootstrap.min.js
+  backofficeApp:
+    addFingerPrint: true
+    link: /.resources/backoffice-light-module/webresources/js/backofficeApp.global.js
+  datatables:
+    addFingerPrint: true
+    link: /.resources/backoffice-light-module/bower_components/datatables.net/js/jquery.dataTables.min.js
+  highcharts:
+    addFingerPrint: true
+    link: /.resources/backoffice-light-module/bower_components/highcharts/highcharts.js
+  moment:
+    addFingerPrint: true
+    link: /.resources/backoffice-light-module/bower_components/moment/min/moment-with-locales.min.js
+  fullcalendar:
+    addFingerPrint: true
+    link: /.resources/backoffice-light-module/bower_components/fullcalendar/dist/fullcalendar.min.js
+imaging:
+  class: info.magnolia.templating.imaging.VariationAwareImagingSupport
+  variations:
+    "1600":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 1600
+    "1366":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 1366
+    "960":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 960
+    "480":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 480
+    "320":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 320
+    "240":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      width: 240
+    "1600x1200":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      height: 1200
+      width: 1600
+    "1366x1024":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      height: 1024
+      width: 1366
+    "960x720":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      height: 720
+      width: 960
+    "480x360":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      height: 360
+      width: 480
+    "320x240":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      height: 240
+      width: 320
+    "240x180":
+      class: info.magnolia.templating.imaging.variation.SimpleResizeVariation
+      height: 180
+      width: 240

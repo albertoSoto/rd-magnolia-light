@@ -1,0 +1,47 @@
+# Automatically generated dialog with few most often used fileds (text, right, link, DAM image, multivalue, link to app, select). Feel free to modify them for your specific component.
+
+form:
+  label: highchart-btk
+  tabs:
+    - name: tabMain
+      label: Main
+      fields:
+
+        - name: title
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Title
+
+        - name: subtitle
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Subtitle
+
+        - name: labelAxisY
+          class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+          label: Y Axis label
+
+        - name: seriesData
+          class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+          label: Data Series
+          transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+          field:
+            name: graph
+            class: info.magnolia.ui.form.field.definition.CompositeFieldDefinition
+            transformerClass: info.magnolia.ui.form.field.transformer.composite.DelegatingCompositeFieldTransformer
+            fields:
+              - name: name
+                class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                label: Series Name
+              - name: values
+                class: info.magnolia.ui.form.field.definition.MultiValueFieldDefinition
+                transformerClass: info.magnolia.ui.form.field.transformer.multi.DelegatingMultiValueFieldTransformer
+                label: Values
+                field:
+                  name: value
+                  class: info.magnolia.ui.form.field.definition.TextFieldDefinition
+                  label: Value
+
+actions:
+  commit:
+    class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition
+  cancel:
+    class: info.magnolia.ui.admincentral.dialog.action.CancelDialogActionDefinition
