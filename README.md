@@ -2,6 +2,7 @@
 
 Imagine magnolia as a personalized backend point!
 Full integration of basic business components in Magnolia: Datatables, Highcharts & Fullcalendar.io.
+Download it from npm: [link](https://www.npmjs.com/package/backoffice-magnolia)
 
 ## Features
 
