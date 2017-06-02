@@ -40,6 +40,21 @@ form:
                   class: info.magnolia.ui.form.field.definition.TextFieldDefinition
                   label: Value
 
+        - name: chartType
+          class: info.magnolia.ui.form.field.definition.SelectFieldDefinition
+          label: Chart Type
+          options:
+            - name: area
+              value: area
+              selected: true
+              label: Area
+            - name: column
+              value: column
+              label: column
+            - name: bar
+              value: bar
+              label: Bar
+
 actions:
   commit:
     class: info.magnolia.ui.admincentral.dialog.action.SaveDialogActionDefinition

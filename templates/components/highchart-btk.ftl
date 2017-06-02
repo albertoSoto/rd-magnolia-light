@@ -24,14 +24,7 @@
 
         $('#hchart${iteration!}').highcharts({
             chart: {
-                /*
-                //must work with percentaje
-                plotBackgroundColor: null,
-                plotBorderWidth: null,
-                plotShadow: false,
-                type: 'pie',*/
-                //type: 'area',
-                //type: 'bar',
+                type:'${content.chartType!"column"}',
                 style: {
                     fontFamily: 'Open Sans'
                 }

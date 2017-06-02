@@ -7,9 +7,12 @@ areas:
   htmlheader:
     type: noComponent
     renderType: freemarker
+    createAreaNode: false
     templateScript: /backoffice-light-module/templates/macro/htmlheader.ftl
   main:
     availableComponents:
+      contactForm:
+        id: backoffice-magnolia:components/contactForm
       gridComponent:
         id: backoffice-light-module:components/grid
       datatable-btk:
@@ -18,3 +21,9 @@ areas:
         id: backoffice-light-module:components/highchart-btk
       fullcalendar-btk:
         id: backoffice-light-module:components/fullcalendar-btk
+      datatable-bltk:
+        id: backoffice-magnolia:components/datatable-bltk
+      calendar-bltk:
+        id: backoffice-magnolia:components/calendar-bltk
+      highchart-bltk:
+        id: backoffice-magnolia:components/highchart-bltk

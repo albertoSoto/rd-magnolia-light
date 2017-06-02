@@ -36,53 +36,61 @@
 <table id="${id!}" class="datatable table table-striped table-hover table-bordered " cellspacing="0" width="100%">
     [#if object?? && (object?is_hash || object?is_hash_ex)]
         [#assign first="true"]
-        [#if !configuration.enableAjax!true]
+        [#assign executeHeadersFiltered = false]
+        [#assign executeHeadersRaw = false]
+        [#if configuration.enableAjax!true]
             [#if configuration.enableFiltering!false]
-                [#list cmsfn.children(object) as child ]
-                    [#if child?? && (child?is_hash || child?is_hash_ex)]
-                        [#if first="true"]
-                            [@toheaders object=child labels=cmsfn.children(configuration.labels) configuration=configuration/]
-                        <tbody>
-                        [/#if]
-                    <tr>
-                        [#list cmsfn.children(configuration.order) as customColumn ]
-                            <td>
-                                [#if child[customColumn.columnKey]?? && child[customColumn.columnKey]?index_of("jcr:")<0]
+                [#assign executeHeadersFiltered = true]
+            [#else]
+                [#assign executeHeadersRaw = true]
+            [/#if]
+        [/#if]
+        [#if executeHeadersFiltered]
+            [#list cmsfn.children(object) as child ]
+                [#if child?? && (child?is_hash || child?is_hash_ex)]
+                    [#if first="true"]
+                        [@toheaders object=child labels=cmsfn.children(configuration.labels) configuration=configuration/]
+                    <tbody>
+                    [/#if]
+                <tr>
+                    [#list cmsfn.children(configuration.order) as customColumn ]
+                        <td>
+                            [#if child[customColumn.columnKey]?? && child[customColumn.columnKey]?index_of("jcr:")<0]
                                 ${i18nContent(child,customColumn.columnKey)}
                             [#else]
-                                    [@getImage content=child key=customColumn.columnKey /]
-                                [/#if]
-                            </td>
-                        [/#list]
-                    </tr>
+                                [@getImage content=child key=customColumn.columnKey /]
+                            [/#if]
+                        </td>
+                    [/#list]
+                </tr>
+                [/#if]
+                [#assign first="false"]
+            [/#list]
+        </tbody>
+        [/#if]
+        [#if executeHeadersRaw]
+            [#list cmsfn.children(object) as child ]
+                [#if child?? && (child?is_hash || child?is_hash_ex)]
+                    [#if first="true"]
+                        [@toheaders object=child labels=cmsfn.children(configuration.labels) configuration=configuration/]
+                    <tbody>
                     [/#if]
-                    [#assign first="false"]
-                [/#list]
-            </tbody>
-            [#else]
-                [#list cmsfn.children(object) as child ]
-                    [#if child?? && (child?is_hash || child?is_hash_ex)]
-                        [#if first="true"]
-                            [@toheaders object=child labels=cmsfn.children(configuration.labels) configuration=configuration/]
-                        <tbody>
-                        [/#if]
-                    <tr>
-                        [#list child?keys as k]
-                            [#if child[k]?? && isKeyValid(k)]
-                                <td>
-                                    [#if child[k]?index_of("jcr:")<0]
+                <tr>
+                    [#list child?keys as k]
+                        [#if child[k]?? && isKeyValid(k)]
+                            <td>
+                                [#if child[k]?index_of("jcr:")<0]
                                 ${i18nContent(child,k)}
                                 [#else]
-                                        [@getImage content=child key=k /]
-                                    [/#if]
-                                </td>
-                            [/#if]
-                        [/#list]
-                    </tr>
-                    [/#if]
-                    [#assign first="false"]
-                [/#list]
-            [/#if]
+                                    [@getImage content=child key=k /]
+                                [/#if]
+                            </td>
+                        [/#if]
+                    [/#list]
+                </tr>
+                [/#if]
+                [#assign first="false"]
+            [/#list]
         </tbody>
         [/#if]
     [/#if]

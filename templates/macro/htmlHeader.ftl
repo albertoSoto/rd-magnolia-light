@@ -1,6 +1,9 @@
 <!-- This portion has been copied directly from the current html header in hello.ftl -->
 <title>${content.windowTitle!content.title!}</title>
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<meta name="description" content="${content.description!""}" />
+<meta name="keywords" content="${content.keywords!""}" />
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <!-- Use the new site templating functions to get the current site -->
 [#assign site = sitefn.site()!]

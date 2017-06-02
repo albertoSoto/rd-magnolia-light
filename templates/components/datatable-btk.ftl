@@ -31,7 +31,7 @@
     </div>
 </div>
 <script type="text/javascript">
-    [@compress_single_line]
+
     window.deferAfterjQueryLoaded.push(function () {
         var btk_${datatableID!} = jQuery('#${datatableID}').DataTable(
             [#if content.enableAjax!false]
@@ -55,7 +55,7 @@
                                 }[#if customColumn_has_next],[/#if]
                                 [#assign colcounter = colcounter+1]
                             [/#list]
-                            [#if content.actions??]
+                            [#if content.actions?? && cmsfn.children(content.actions)?size>0]
                                 , {
                                 "targets": ${colcounter},
                                 "title": "Actions",
@@ -96,7 +96,7 @@
                 switch (action.method) {
                     case "ajaxHtml":
                         $.backofficeApp.global.doAjax(url, 'POST', data, function (result) {
-                            $.backofficeApp.global.openModal("", result, "Cerrar");
+                            $.backofficeApp.global.openModal("", result.responseText, "Cerrar");
                         }, function (e) {
                             $.backofficeApp.global.openModal("Configuration problem"
                                     , "There was an error loading " + url
@@ -115,11 +115,14 @@
                     case "post":
                         $.backofficeApp.global.redirectPost(url, data);
                         break;
+                    case "goto":
+                        window.location.href = url;
+                        break;
                     default:
                         console.log("no action detected");
                 }
             });
         [/#if]
     });
-    [/@compress_single_line]
+    [@compress_single_line][/@compress_single_line]
 </script>

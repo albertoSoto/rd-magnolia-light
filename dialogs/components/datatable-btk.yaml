@@ -84,7 +84,7 @@ form:
 
         - name: catLabel3
           class: info.magnolia.ui.form.field.definition.StaticFieldDefinition
-          value: Use any data provider via ajax with json fields according to https://datatables.net/examples/ajax/objects.html
+          value: Use any data provider via ajax with json fields according to https://datatables.net/example/ajax/objects.html
           label: Loading external data
 
         - name: url
@@ -129,6 +129,9 @@ form:
                     value: post
                     selected: true
                     label: Send POST
+                  - name: goto
+                    value: goto
+                    label: Send
                   - name: ajaxHtml
                     value: ajaxHtml
                     label: Async POST, popup HTML

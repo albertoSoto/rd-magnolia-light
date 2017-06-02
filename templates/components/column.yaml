@@ -13,6 +13,8 @@ areas:
     availableComponents:
       html:
         id: mtk:components/textImage
+      teaser:
+        id: travel-demo:components/teaser
       column:
         id: backoffice-light-module:components/column
       datatable-btk:
@@ -21,3 +23,11 @@ areas:
         id: backoffice-light-module:components/highchart-btk
       fullcalendar-btk:
         id: backoffice-light-module:components/fullcalendar-btk
+      contactForm:
+        id: backoffice-magnolia:components/contactForm
+      datatable-bltk:
+        id: backoffice-magnolia:components/datatable-bltk
+      calendar-bltk:
+        id: backoffice-magnolia:components/calendar-bltk
+      highchart-bltk:
+        id: backoffice-magnolia:components/highchart-bltk

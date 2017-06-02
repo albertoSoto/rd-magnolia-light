@@ -51,7 +51,7 @@
         [#elseif content.enableAjax!false]
             eventSources: [
             [#list cmsfn.children(content.ajaxCollections) as data]
-            {url:"${data.url!}"[#if data_has_next],[/#if]}
+            {url:"${ctx.contextPath!""}${data.url!}"[#if data_has_next],[/#if]}
             [/#list]
             ],
         [#else]
