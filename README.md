@@ -7,6 +7,7 @@ Download it from npm: [link](https://www.npmjs.com/package/backoffice-magnolia)
 ## How to install
 This is Magnolia light module project ready to use by the community. To install it,
 just save this module into your light components folder as "backoffice-light-module" to fit with magnolia needs
+You can see details for the demo at [Open expo presentation](http://learning.albertosoto.es/rd2017
 
 ## Features
 
