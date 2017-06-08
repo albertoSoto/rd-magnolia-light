@@ -1,0 +1,6 @@
+version: 1.0
+dependencies:
+  core:
+    version: 5.5.3
+  magnolia-jsonfn:
+    version: 1.0.7

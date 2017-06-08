@@ -4,7 +4,8 @@ Imagine magnolia as a personalized backend point!
 Full integration of basic business components in Magnolia: Datatables, Highcharts & Fullcalendar.io.
 Download it from npm: [link](https://www.npmjs.com/package/backoffice-magnolia)
 
-## How to install
+## How to install.
+
 This is Magnolia light module project ready to use by the community. To install it,
 just save this module into your light components folder as "backoffice-light-module" to fit with magnolia needs
 You can see details for the demo at [Open expo presentation](http://learning.albertosoto.es/rd2017
